@@ -105,6 +105,35 @@ nav ul li a {
   }
 }
 
+@media screen and (max-width: 450px) {
+  nav ul li a {
+    padding: 1vw 2vw !important;
+  }
+  .content h2 {
+    font-size: 2.5rem !important;
+    margin-top: 8vh !important;
+    margin-bottom: 4vh !important;
+  }
+  .carousel-grid {
+    grid-template-columns: repeat(1, 3fr) !important;
+  }
+  .carousel-wrapper {
+    width: 80vw !important;
+  }
+  #services {
+    padding: 5vh 2vw 10vh 2vw !important;
+  }
+  .content {
+    max-width: unset !important;
+  }
+  .content h2 {
+    text-align: center !important;
+  }
+  .headshot {
+    width: 80vw !important;
+  }
+}
+
 /* NAV MENU ^^^ */
 
 
@@ -120,7 +149,7 @@ nav ul li a {
   position: absolute;
   color: white;
   padding: 1rem;
-  background-color: rgba(27, 43, 64, 0.8);
+  background-color: rgba(27, 43, 64, 0.9);
   border-radius: 1px;
   box-shadow: 5px 8px;
   z-index: 80;
