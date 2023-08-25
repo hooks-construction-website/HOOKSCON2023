@@ -59,6 +59,87 @@ nav ul li a {
   height: 3.5rem;
 }
 
+/* Default styles */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  background-color: #ffffff;
+  height: 3px;
+  width: 25px;
+  margin: 3px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  nav.sticky ul {
+      display: none;
+      height: 7rem !important;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    height: unset !important;
+  }
+
+  nav li {
+    height: 50% !important;
+  }
+
+  .menu-toggle {
+      display: flex;
+      margin: 0 5vw;
+      height: 3.5rem;
+      flex-direction: column;
+      justify-content: center;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  nav.sticky ul {
+    display: block !important;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  nav ul li a {
+    padding: 1vw 2vw !important;
+  }
+  .content h2 {
+    font-size: 2.5rem !important;
+    margin-top: 8vh !important;
+    margin-bottom: 4vh !important;
+  }
+  .carousel-grid {
+    grid-template-columns: repeat(1, 3fr) !important;
+  }
+  .carousel-wrapper {
+    width: 80vw !important;
+  }
+  #services {
+    padding: 5vh 2vw 10vh 2vw !important;
+  }
+  .content {
+    max-width: unset !important;
+  }
+  .content h2 {
+    text-align: center !important;
+  }
+  .headshot {
+    width: 80vw !important;
+  }
+}
+
+/* NAV MENU ^^^ */
+
+
+
+
+
 .hero {
   height: 70vh;
   overflow: hidden;
@@ -68,7 +149,7 @@ nav ul li a {
   position: absolute;
   color: white;
   padding: 1rem;
-  background-color: rgba(27, 43, 64, 0.8);
+  background-color: rgba(27, 43, 64, 0.9);
   border-radius: 1px;
   box-shadow: 5px 8px;
   z-index: 80;
@@ -79,14 +160,14 @@ nav ul li a {
 }
 .hero img {
   height: 70vh;
-  width: 100%;
-  object-fit: none;
-  transition: transform 0.3s ease;
+  width: 100vw;
+  object-fit: cover;
+  transition: transform 0.5s ease;
   z-index: 70;
   position: relative;
 }
 .hero img:hover {
-  transform: scale(1.05);
+  transform: scale(1.01);
 }
 
 /* Divider Styles */
@@ -137,9 +218,9 @@ nav ul li a {
 }
 .content h2 {
   font-size: 4rem;
-  font-weight: 300;
+  font-weight: bold;
   margin: 1rem;
-  letter-spacing: 1.5px;
+  letter-spacing: 0.5rem;
 }
 .content h3 {
   font-size: 1.5rem;
@@ -168,7 +249,7 @@ p {
 }
 
 #gallery {
-  padding: 10vw 5vw;
+  padding: 8vw 5vw;
 }
 .carousel-grid {
   display: grid;
@@ -186,21 +267,21 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: 0.5s ease;
 }
 
 .carousel img {
   width: 100%;
-  height: auto;
+  height: 40vh;
+  object-fit: cover;
+}
+.carousel:hover {
+  transform: scale(1.02);
 }
 
 .slick-arrow {
   display: none !important;
 }
-
-/*.slick-dots {
-  text-align: center;
-  padding: 0;
-}*/
 
 .slick-dots {
 	display: flex;
@@ -234,7 +315,7 @@ p {
 
 /* SERVICES */
 #services {
-  padding: 10vw 5vw;
+  padding: 6vw 8vw 10vw 10vw;
 }
 .service-container {
   display: flex;
@@ -243,20 +324,33 @@ p {
   flex: 1;
   text-align: center;
   margin: 0 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  box-shadow: 5px 8px;
+  /* transform: 0.5s ease; */
 }
 .service-img {
   width: 100%;
-  height: auto;
+  height: 40vh;
   border-radius: 1px;
+  object-fit: cover;
 }
 .service-wrapper p {
   color: white;
+  margin: 1rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .service-container {
     flex-direction: column;
   }
+  .service-wrapper {
+    margin-bottom: 5vh;
+  }
 }
+/* .service-wrapper:hover {
+  transform: scale(1.01);
+  box-shadow: 7px 10px;
+} */
 
 
 .testimonials-grid {
@@ -336,11 +430,15 @@ p {
   .content {
     max-width: 90vw;
   }
+  .service-wrapper {
+    box-shadow: none;
+    margin-bottom: 2vh;
+  }
 }
 
 
 footer {
-  background-color: white;
+  background-color: ghostwhite;
   color: black;
   padding: 20px;
   z-index: 70;
